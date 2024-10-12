@@ -1,6 +1,6 @@
 <template>
   <div id="wide"
-    class="overflow-hidden bg-white sm:rounded-lg text-gray-400 text-[13px] p-[1rem] sm:px-[4rem] md:px-[2rem]  md:w-fit h-fit sm:w-full py-[2rem]">
+    class="overflow-hidden bg-white sm:rounded-lg text-gray-400 text-[13px] p-[1rem] sm:px-[3rem] md:px-[4rem] lg:px-[2.5rem] h-fit w-full py-[2rem]">
     <div id="card" class="container sm:max-w-full lg:max-w-[25rem]">
       <div class="mb-[1rem]">
         <span class="text-gray-600 font-semibold text-[14px]">About Shelter</span>
@@ -27,7 +27,7 @@
 
 <script setup>
 import { onMounted, ref } from 'vue';
-import axios from "axios"; 
+import axios from "axios";
 import { PhoneIcon, LinkIcon, EnvelopeIcon, MapPinIcon } from "@heroicons/vue/20/solid";
 
 
@@ -60,7 +60,7 @@ const details = ref([
 
 async function loadProfileDetails() {
   const id = localStorage.getItem('c_id');
-  
+
   try {
     const response = await axios.post("http://localhost:5000/edit_shelterprofile", {
       shelterid: id

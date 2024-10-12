@@ -22,11 +22,11 @@ const toastRef = ref(null);  // Ref for the Toast component
 
 // Methods
 const toggleModalPost = () => {
-  showModalCreatePost.value = !showModalCreatePost.value;
+    showModalCreatePost.value = !showModalCreatePost.value;
 };
 
 const toggleModalEvent = () => {
-  showModalNewEvent.value = !showModalNewEvent.value;
+    showModalNewEvent.value = !showModalNewEvent.value;
 };
 
 onMounted(() => {
@@ -55,13 +55,13 @@ onMounted(() => {
             </div>
             <div id="minscreen"
                 class="mt-[1rem] flex sm:flex-col md:flex-row lg:flex-row md:justify-between sm:w-full sm:gap-y-[1rem] md:gap-x-[1rem]">
-                <div id="leftside" class="lg:w-[25%]">
+                <div id="leftside" class="xl:w-[27%]">
                     <detailCard class="border rounded-md" />
                 </div>
-                <div id="rightside" class="lg:w-[75%] h-fit">
+                <div id="rightside" class="xl:w-[78%] h-fit">
                     <div class="mb-[1rem]">
                         <div
-                            class="flex justify-between items-center bg-amber-50 rounded-lg py-2 sm:px-[2rem] lg:px-[3rem]">
+                            class="flex justify-between items-center bg-slate-50 rounded-lg py-2 sm:px-[2rem] lg:px-[3rem]">
                             <div><span class="sm:text-[14px]">Event Posts</span></div>
                             <div>
                                 <button @click="$nextTick(() => {
@@ -80,11 +80,11 @@ onMounted(() => {
                     </div>
                     <div>
                         <div id="pxlg"
-                            class="flex justify-between border-b-2 border-t items-center p-[1rem] sm:px-[2rem] lg:px-[3rem] bg-white">
-                            <span id="feed" class="sm:text-[14px]">Shelter's Feed</span>
-                            <div id="sbuttons" class="flex gap-4">
+                            class="flex gap-x-1 justify-between border-b-2 border-t items-center py-[1rem] sm:px-[.5rem] lg:px-[3rem]">
+                            <div><span id="feed" class="sm:text-[14px]">Shelter's Feed</span></div>
+                            <div id="sbuttons" class="flex gap-x-3">
                                 <button type="button" @click="toggleModalEvent"
-                                    class="flex justify-center rounded-md bgorange px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-bgdarkorange group">
+                                    class="flex justify-center rounded-md bgorange sm:px-3 py-2 text-sm font-semibold text-white shadow-sm hover:animate-bounce group">
                                     <svg id="px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                         fill="currentColor" class="size-5">
                                         <path fill-rule="evenodd"
@@ -95,7 +95,7 @@ onMounted(() => {
                                         Post an Event</span>
                                 </button>
                                 <button type="button" @click="toggleModalPost"
-                                    class="flex justify-center rounded-md bgteal px-3 py-2 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-bgteal group">
+                                    class="flex justify-center rounded-md bgteal px-3 py-2 text-sm font-semibold text-white shadow-sm  hover:animate-bounce group">
                                     <svg id="px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                                         fill="currentColor" class="size-5">
                                         <path fill-rule="evenodd"
@@ -124,6 +124,6 @@ onMounted(() => {
                 <linkfooter />
             </div>
         </footer>
-        <Toast ref="toastRef"  @closed="refreshRoute($router)" />
+        <Toast ref="toastRef" @closed="refreshRoute($router)" />
     </div>
 </template>

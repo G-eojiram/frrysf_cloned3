@@ -4,12 +4,12 @@ import textvalue from '@/components/textString.vue'
 import datetoday from '@/components/Client/Shelter/dateCard.vue'
 import linkfooter from '@/components/footerLink.vue'
 import reports from '@/components/Client/Shelter/shelter_RescueOp_ReportsCard.vue'
-import reportview from '@/components/Client/Shelter/shelter_RescueOp_ViewReport.vue'
+import hover from '@/components/Client/Shelter/shelter_HoverName.vue'
 import chats from '@/components/Client/Shelter/shelter_RescueOp_ChatBox.vue'
 
 export default {
     components: {
-        textvalue, datetoday, linkfooter, reports, chats, reportview
+        textvalue, datetoday, linkfooter, reports, chats, hover
     },
     data() {
         const tabs = [
@@ -46,7 +46,7 @@ export default {
             <div class="pt-4 mx-auto flex justify-center">
                 <div class="w-fit">
                     <reports/>
-                    <!-- <reportview/> -->
+                    <!-- <hover/> -->
                 </div>
             </div>
         </div>

@@ -74,7 +74,7 @@
 </template>
 <script>
 import { ref } from 'vue'
-import PetList from '@/components/dropdown_PetList.vue'
+import PetList from '@/components/Client/Shelter/shelter_NewPostModal_dropdown_PetList.vue'
 import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
 
 export default {
