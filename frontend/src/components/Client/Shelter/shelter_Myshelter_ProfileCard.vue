@@ -1,15 +1,15 @@
 <template>
-    <div class="bg-white md:flex md:items-center md:justify-between md:space-x-5 border-b-2 border-t p-[2rem] lg:px-[5rem]">
+    <div class="bg-white md:flex md:items-center md:justify-evenly md:space-x-5 border rounded-2xl shadow-sm p-[2rem] sm:justify-center xl:justify-between xl:px-[10rem]">
         <div v-for="(profile, index) in profiles" :key="index"
             class="flex items-center space-x-5 sm:justify-center">
             <div class="flex-shrink-0">
                 <div class="relative">
-                    <img class="h-32 w-32 rounded-full object-cover" :src="profileUrl" alt="profile image " />
+                    <img class="sm:h-32 sm:w-32 xl:h-52 xl:w-52 rounded-full object-cover" :src="profileUrl" alt="profile image " />
                     <span class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></span>
                 </div>
             </div>
             <div class="pt-1.5 lg:pl-[10px]">
-                <h1 class="text-2xl font-bold text-gray-900">{{ profile.shelter }}</h1>
+                <h1 class="sm:text-2xl xl:text-3xl font-bold text-gray-800">{{ profile.shelter }}</h1>
                 <span class="text-sm font-medium text-gray-500">{{ profile.email }}</span>
             </div>
         </div>

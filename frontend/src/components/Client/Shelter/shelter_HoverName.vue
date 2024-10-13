@@ -51,11 +51,11 @@ export default {
             </div>
         </div>
         <div class="flex justify-evenly items-center text-sm font-semibold">
-            <button
-                class="flex gap-x-2 border rounded-lg bg-gray-50 hover:bg-gray-100 hover:animate-pulse sm:px-4 md:px-8 xl:px-20 py-2 items-center">
-                <EyeIcon class="h-6 w-6 text-gray-300" />
-                <span class="text-gray-500">View Profile</span>
-            </button>
+            <RouterLink to="/viewprofile"
+                class="flex gap-x-2 border rounded-lg bg-gray-50 hover:bg-gray-200 group hover:animate-pulse sm:px-4 md:px-8 xl:px-20 py-2 items-center">
+                <EyeIcon class="h-6 w-6 text-gray-300 group-hover:text-gray-700" />
+                <span class="text-gray-500 group-hover:text-gray-700">View Profile</span>
+            </RouterLink>
             <RouterLink to=""
                 class="flex gap-x-3 border rounded-lg bgteal hover:animate-pulse sm:px-4 md:px-8 xl:px-20 py-2 items-center">
                 <ChatBubbleLeftEllipsisIcon class="h-6 w-6 text-white" />

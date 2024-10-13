@@ -2,14 +2,14 @@
     <div class="h-screen flex flex-col">
         <header class="flex justify-between items-center">
             <div class="graycolor">
-                <textvalue msg="Animal Profile" />
+                <textvalue msg="Animal Profile"/>
             </div>
-            <div class="flex gap-x-3 sm:gap-1 items-center">
+            <div class="flex sm:gap-x-1 md:gap-x-4 items-center">
                 <div class="bgorange py-[.40rem] px-[2rem] sm:px-[12px] rounded-md hover:bg-bgdarkorange">
                     <RouterLink to="/create_animalprofileform" class="flex gap-x-1 items-center">
                         <FolderPlusIcon class="-ml-0.5 mr-1.5 sm:h-4 sm:w-4 md:h-5 md:w-5 text-white"
                             aria-hidden="true" />
-                        <span class="text-white font-medium text-[13.5px] sm:text-[11.6px]">Create New Profile</span>
+                        <span class="text-white font-medium text-[13.5px] sm:text-[11px]">Create New Profile</span>
                     </RouterLink>
                 </div>
                 <div class="flex gap-5">
@@ -36,7 +36,7 @@
                     <div>
                         <div class="text-[14px] bg-slate-50 p-[1rem] hover:bg-bgteal hover:text-white rounded-b-lg">
                             <RouterLink :to="{ name: 'viewanimalprofile', params: { petid: pets.petid } }">
-                                <span class="px-[5rem] py-[1rem]">View Profile</span>
+                                <span class="px-[2rem] py-[1rem]">View Profile</span>
                             </RouterLink>
                         </div>
                     </div>

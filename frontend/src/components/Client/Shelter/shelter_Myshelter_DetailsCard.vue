@@ -1,6 +1,6 @@
 <template>
   <div id="wide"
-    class="overflow-hidden bg-white sm:rounded-lg text-gray-400 text-[13px] p-[1rem] sm:px-[3rem] md:px-[4rem] lg:px-[2.5rem] h-fit w-full py-[2rem]">
+    class="overflow-hidden bg-white sm:rounded-2xl shadow-sm text-gray-400 text-[13px] p-[1rem] sm:px-[3rem] lg:px-[2.5rem] h-fit w-full py-[2rem]">
     <div id="card" class="container sm:max-w-full lg:max-w-[25rem]">
       <div class="mb-[1rem]">
         <span class="text-gray-600 font-semibold text-[14px]">About Shelter</span>

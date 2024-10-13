@@ -33,6 +33,7 @@ import viewanimalprofile from "../views/Shelter/animalprofile_ViewProfile.vue";
 import editanimalprofile from "../views/Shelter/animalprofile_EditProfile.vue";
 
 import viewreportdetails from "@/components/Client/Shelter/shelter_RescueOp_ViewReport.vue";
+import viewprofile from "@/components/Client/Shelter/shelter_ViewProfile.vue"
 
 //jene
 import login from "../views/login.vue";
@@ -246,6 +247,12 @@ const routes = [
         path: "/viewreportdetails",
         name: "viewreportdetails",
         component: viewreportdetails,
+      },
+      {
+        // rescue operation - view profile details
+        path: "/viewprofile",
+        name: "viewprofile",
+        component: viewprofile,
       },
     ],
   },
