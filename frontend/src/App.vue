@@ -2,8 +2,11 @@
     <RouterView />
 </template>
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 #app {
     /* font-family: Avenir, Helvetica, Arial, sans-serif; */
+    font-family: "Montserrat", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -80,10 +83,27 @@
         height: 15rem;
     }
 }
-
-@media (max-width: 1491px) {
+@media (min-width: 2300px) and (max-width: 9468px) {
     #profile-columns {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 2300px) {
+    #profile-columns {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 1855px) {
+    #profile-columns {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 1597px) {
+    #profile-columns {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
     #margin {
@@ -139,6 +159,13 @@
         flex-direction: column;
     }
 }
+
+@media (max-width: 1367px) {
+    #profile-columns {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
 
 @media (max-width: 1211px) {
     #profile-columns {
@@ -233,7 +260,7 @@
     }
 }
 
-@media (max-width: 894px) {
+@media (max-width: 845px) {
     #profile-columns {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }

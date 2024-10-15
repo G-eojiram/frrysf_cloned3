@@ -19,7 +19,7 @@
         </header>
         <main class="mt-[1rem]">
             <ul id="profile-columns" role="list"
-                class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                 <li v-for="pets in profiles" :key="pets.name"
                     class="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center border drop-shadow-md">
                     <div class="flex flex-1 flex-col p-7">

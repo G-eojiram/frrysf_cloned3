@@ -11,6 +11,8 @@ import popupNewpost from '@/components/Client/Shelter/shelter_NewPostModal.vue';
 import popupNewEvent from '@/components/Client/Shelter/shelter_EventPostModal.vue';
 import eventsCard from '@/components/Client/Shelter/shelter_Myshelter_EventFeaturedCard.vue';
 
+import shelterfeed from '@/components/Client/Shelter/shelter_MyShelter_NewsfeedCard.vue'
+
 const route = useRoute();
 
 // State variables
@@ -113,7 +115,8 @@ onMounted(() => {
                         </div>
 
                         <div class="my-[1rem]">
-                            <RouterView />
+                            <!-- <RouterView /> -->
+                             <shelterfeed />
                         </div>
                     </div>
                 </div>

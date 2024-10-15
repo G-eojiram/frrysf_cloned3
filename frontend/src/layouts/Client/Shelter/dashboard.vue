@@ -204,8 +204,8 @@ const route = useRoute()
 const navigation = [
     { name: 'Dashboard', to: { name: 'dashboardContent' }, icon: RectangleGroupIcon, current: false },
     { name: 'My Shelter', to: { name: 'shelterprofile' }, icon: HomeModernIcon, current: false },
-    { name: 'Animal Profile', to: { name: 'animalprofile' }, icon: IdentificationIcon, current: false },
     { name: 'Rescue Operation', to: { name: 'rescueoperation' }, icon: ChatBubbleLeftRightIcon, current: false },
+    { name: 'Animal Profile', to: { name: 'animalprofile' }, icon: IdentificationIcon, current: false },
 ]
 
 const currentNavigationItem = computed(() => { // to style the currently selected

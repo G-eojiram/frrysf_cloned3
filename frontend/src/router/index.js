@@ -23,9 +23,8 @@ import shelteranimalprofile from "../views/Shelter/animalprofile.vue";
 import rescueoperation from "../views/Shelter/rescueoperation.vue";
 
 // my shelter feed, view post, edit profile
-import shelterfeed from "../components/shelter_NewsfeedCard.vue";
-import shelterviewpost from "../components/shelter_ViewPostCard.vue";
 import editshelterprofile from "../views/Shelter/myshelter_EditProfile.vue";
+import viewfeedpostdetails from "@/components/Client/Shelter/shelter_Myshelter_ViewPostDetails.vue"
 
 // animal profile
 import createanimalprofile from "../views/Shelter/animalprofile_CreateNewProfile.vue";
@@ -188,27 +187,18 @@ const routes = [
         path: "/myshelter",
         name: "shelterprofile",
         component: shelterprofile,
-        redirect: "/myshelter_feed", // shelter_NewsfeedCard.vue
-        children: [
-          {
-            // a component shelter_NewsfeedCard.vue
-            path: "/myshelter_feed",
-            name: "shelterfeed",
-            component: shelterfeed,
-          },
-          {
-            // a component shelter_ViewPostCard.vue
-            path: "/myshelter_viewpost",
-            name: "shelterviewpost",
-            component: shelterviewpost,
-          },
-        ],
       },
       {
         // my shelter - Edit Profile
         path: "/edit_shelterprofile",
         name: "editshelterprofile",
         component: editshelterprofile,
+      },
+      {
+        // my shelter - view post details
+        path: "/viewfeedpostdetails",
+        name: "viewfeedpostdetails",
+        component: viewfeedpostdetails,
       },
       {
         // animal profile
@@ -274,8 +264,13 @@ const routes = [
       },
       {
         name: "Messages",
-        path: "messages",
+        path: "/messages",
         component: messages,
+      },
+      {
+        name: "profile",
+        path: "/profile",
+        component: Profile,
       },
     ],
   },
@@ -300,11 +295,6 @@ const routes = [
     component: loginshel,
   },
   {
-    name: "profile",
-    path: "/profile",
-    component: Profile,
-  },
-  {
     name: "timeline",
     path: "/timeline",
     component: Timeline,
@@ -314,6 +304,8 @@ const routes = [
     path: "/petprofile",
     component: petProfile,
   },
+  // end of dolends ui
+
   // console.log('shelterDashboard component:', shelterDashboard),
   // console.log('shelterdashboardContent component:', shelterdashboardContent),
 ];

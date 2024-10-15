@@ -1,9 +1,9 @@
 <template>
   <TransitionRoot as="template" :show="open">
-    <Dialog as="div" class="relative z-30" @close="open = false">
+    <Dialog as="div" class="relative z-50" @click.self="$emit('close')">
       <TransitionChild as="template" enter="ease-out duration-300" enter-from="opacity-0" enter-to="opacity-100"
         leave="ease-in duration-200" leave-from="opacity-100" leave-to="opacity-0">
-        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+        <div class="fixed inset-0 bg-gray-500 bg-opacity-30 transition-opacity" />
       </TransitionChild>
       <div class="fixed inset-0 z-10 overflow-y-auto">
         <div class="flex min-h-full items-center justify-center p-4 text-left sm:p-0">
@@ -13,12 +13,12 @@
             leave-from="opacity-100 translate-y-0 sm:scale-100"
             leave-to="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
             <DialogPanel
-              class="relative transform overflow-hidden rounded-lg bg-white shadow-lg transition-all sm:max-w-lg sm:w-full p-6">
+              class="relative transform overflow-hidden rounded-lg bg-white shadow-lg transition-all sm:max-w-[60rem] sm:mx-4 sm:w-full p-6">
               <div class="flex justify-between items-center">
                 <DialogTitle as="h3" class="text-lg font-semibold leading-6 text-gray-900">
                   Create Report
                 </DialogTitle>
-                <button @click="open = false" ref="cancelButtonRef" class="text-gray-500 hover:text-gray-700">
+                <button @click="$emit('close')" ref="cancelButtonRef" class="text-gray-500 hover:text-gray-700">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     stroke-width="2" class="w-5 h-5">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -32,10 +32,8 @@
                   <div class="flex flex-col gap-y-1">
                     <span class="text-base font-medium">Reporter Name</span>
                     <select
-                      class="border text-gray-700 bg-slate-50 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex text-left">
-                      <option value="" selected disabled hidden>
-                        Report Type
-                      </option>
+                      class="border text-gray-700 bg-slate-50 font-medium rounded-lg text-sm px-5 py-2.5  inline-flex text-left  ">
+                      <option value="" selected disabled hidden>Report Type</option>
                       <option value="Missing">Missing Pet</option>
                       <option value="Abandoned">Abandoned Pet</option>
                     </select>
@@ -44,10 +42,8 @@
                 <div class="text-sm">
                   <div class="py-2 flex flex-col gap-y-2">
                     <label for="petcategory" class="font-medium">Pet Category</label>
-                    <select id="petcategory" class="text-gray-700 bg-slate-50 block w-full p-2.5 border rounded-lg">
-                      <option value="" selected disabled hidden>
-                        Select Pet Category
-                      </option>
+                    <select id="petcategory" class="text-gray-700 bg-slate-50 block w-full p-2.5 border rounded-lg ">
+                      <option value="" selected disabled hidden>Select Pet Category</option>
                       <option value="Dog">Dog</option>
                       <option value="Cat">Cat</option>
                       <option value="Others">Others</option>
@@ -95,14 +91,21 @@
                           <img :src="images" alt="Images Icon" class="h-[2rem] w-[2rem]" />
                         </label>
                       </div>
+                      <div>
+                        <button>
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" width="25" height="25">
+                            <path fill="#f03d3d"
+                              d="M172.3 501.7C27 291 0 269.4 0 192 0 86 86 0 192 0s192 86 192 192c0 77.4-27 99-172.3 309.7-9.5 13.8-29.9 13.8-39.5 0zM192 272c44.2 0 80-35.8 80-80s-35.8-80-80-80-80 35.8-80 80 35.8 80 80 80z" />
+                          </svg>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="flex justify-end w-full mt-4">
-                <button type="button"
-                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                  @click="open = false">
+                <button type="button" @click="$emit('close')"
+                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                   Report
                 </button>
               </div>
@@ -114,5 +117,32 @@
   </TransitionRoot>
 </template>
 <script setup>
+import { ref } from 'vue'
 import { Dialog, DialogPanel, DialogTitle, TransitionChild, TransitionRoot } from '@headlessui/vue'
+
+const fileInput = ref(null);
+const imageUrls = ref([]);
+const images = 'https://img.icons8.com/fluency/48/stack-of-photos.png';
+
+// Handle file change and load images
+const handleFileChange = (event) => {
+  const files = event.target.files;
+  for (let i = 0; i < files.length; i++) {
+    const file = files[i];
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      imageUrls.value.push(event.target.result);
+    };
+    reader.readAsDataURL(file);
+  }
+}
+
+// Remove image from list
+const removeImage = (index) => {
+  imageUrls.value.splice(index, 1);
+}
+
+const emit = defineEmits(['close']) // for closing the modal
+const open = ref(true)
+
 </Script>

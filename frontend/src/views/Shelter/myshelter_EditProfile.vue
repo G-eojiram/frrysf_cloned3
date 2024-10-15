@@ -184,7 +184,7 @@ async function saveProfile() {
             // navigateTo("/myshelter", { query: { showToast: true, message: 'Saved Successfully', from: 'edit' } });
             navigateTo({
                 path: "/myshelter",
-                query: { showToast: true, message: 'Saved Successfully'}
+                query: { showToast: true, message: 'Saved Successfully' }
             });
         } else {
             console.error('Failed to save profile:', response.data.message);
