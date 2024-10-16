@@ -1,33 +1,35 @@
-<script>
-export default {
-    data() {
-        return {
-            // newsfeed
-            shelterpost: [
-                {
-                    caption: 'You can’t buy love, but you can rescue it.',
-                    who: 'Eric',
-                    imageUrl: require('@/assets/images/rescue.png'),
-                    dropdownOpen: false
-                },
-                // more post details
-                {
-                    caption: 'Saving on dog will not change the world, but surely for that one dog, the world will change forever.” - Karen Davison',
-                    who: 'Jeneh',
-                    imageUrl: require('@/assets/images/animalshelterdog.png'),
-                    dropdownOpen: false
-                },
-                {
-                    caption: 'Do you believe in love at first sight, or should I wag my tail again?',
-                    who: 'Cyril',
-                    imageUrl: require('@/assets/images/homepage.png'),
-                    dropdownOpen: false
-                },
-            ],
-        }
-    },
+<script setup>
+import viewpostdetials from '@/components/Client/Shelter/shelter_Mysheltet_ViewpostDetailsModal.vue';
+import { ref } from 'vue';
+
+const showModalViewDetails = ref(false)
+
+const toggleModalViewDetails = () => {
+    showModalViewDetails.value = !showModalViewDetails.value;
 };
+// newsfeed
+const shelterpost = ref([
+    {
+        caption: 'You can’t buy love, but you can rescue it.',
+        who: 'Eric',
+        imageUrl: require('@/assets/images/rescue.png'),
+        dropdownOpen: false
+    },
+    {
+        caption: 'Saving on dog will not change the world, but surely for that one dog, the world will change forever.” - Karen Davison',
+        who: 'Jeneh',
+        imageUrl: require('@/assets/images/animalshelterdog.png'),
+        dropdownOpen: false
+    },
+    {
+        caption: 'Do you believe in love at first sight, or should I wag my tail again?',
+        who: 'Cyril',
+        imageUrl: require('@/assets/images/homepage.png'),
+        dropdownOpen: false
+    },
+]);
 </script>
+
 <template>
     <div>
         <div v-for="(post, index) in shelterpost" :key="index" class="border rounded-lg bg-white w-full h-fit mb-4">
@@ -52,9 +54,10 @@ export default {
                         <div v-if="post.dropdownOpen"
                             class="absolute right-0 mt-2 w-[8rem] rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
                             <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                                <RouterLink to="/viewfeedpostdetails"
+                                <button @click="toggleModalViewDetails"
                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
-                                    role="menuitem">View post</RouterLink>
+                                    role="menuitem">View post</button>
+                                <viewpostdetials v-if="showModalViewDetails" @close="toggleModalViewDetails" />
                                 <RouterLink to=""
                                     class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                                     role="menuitem">Edit post</RouterLink>

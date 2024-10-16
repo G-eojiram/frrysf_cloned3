@@ -4,11 +4,9 @@ import {
     ChevronRightIcon,
 } from "@heroicons/vue/20/solid";
 
-import previewhover from '@/components/Client/Shelter/shelter_HoverName.vue'
-
 export default {
     components: {
-        ChevronLeftIcon, ChevronRightIcon, previewhover
+        ChevronLeftIcon, ChevronRightIcon
     },
     data() {
         return {

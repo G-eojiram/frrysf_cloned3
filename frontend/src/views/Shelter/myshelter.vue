@@ -18,7 +18,7 @@ const route = useRoute();
 // State variables
 const showModalNewEvent = ref(false);
 const showModalCreatePost = ref(false);
-const isOpen = ref(false);
+// const isOpen = ref(false);
 const showEventInfo = ref(false);
 const toastRef = ref(null);  // Ref for the Toast component
 
